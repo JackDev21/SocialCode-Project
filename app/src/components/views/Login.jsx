@@ -75,6 +75,11 @@ function Login() {
           <SubmitButton type="submit">Login</SubmitButton>
         </FormWithFeedback>
         <Link onClick={handleRegisterClick}> Don´t have an account? Register </Link>
+
+        <div className="mt-5 flex w-[90%] flex-col items-center">
+          <p className="flex text-center text-xl text-white">Registrate ó tambien puedes usar un usuario de prueba</p>
+          <p className="text-2xl text-white">Username: Randomuser | Password: 1234</p>
+        </div>
       </View>
     </>
   )

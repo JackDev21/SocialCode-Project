@@ -19,7 +19,7 @@ const getUserName = (userId, targetUserId) => {
           if (!user) {
             throw new NotFoundError("❌ targetUser not found ❌")
           }
-          return user.name
+          return user.username
         })
     })
 }

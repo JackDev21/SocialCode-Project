@@ -27,16 +27,16 @@ function Register() {
 
     const target = event.target
 
-    const name = target.name.value
-    const surname = target.surname.value
-    const email = target.email.value
+    // const name = target.name.value
+    // const surname = target.surname.value
+    // const email = target.email.value
     const username = target.username.value
     const password = target.password.value
     const passwordRepeat = target.passwordRepeat.value
 
     try {
       // prettier-ignore
-      logic.registerUser(name, surname, email, username, password, passwordRepeat)
+      logic.registerUser(/*name, surname, email,*/ username, password, passwordRepeat)
         .then(() => {
           navigate("/login")
 
@@ -71,7 +71,7 @@ function Register() {
       <View className="View RegisterForm" tag="main">
         <Title>REGISTER</Title>
         <FormWithFeedback className="RegisterForm" onSubmit={handleRegisterSubmit} message={message}>
-          <Field id="name" placeholder="name">
+          {/* <Field id="name" placeholder="name">
             Name
           </Field>
 
@@ -81,7 +81,7 @@ function Register() {
 
           <Field id="email" placeholder="email">
             Email
-          </Field>
+          </Field> */}
 
           <Field id="username" placeholder="username">
             Username

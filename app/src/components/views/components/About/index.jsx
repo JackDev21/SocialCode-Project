@@ -16,6 +16,9 @@ function About() {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta officiis possimus, velit facilis nobis
         exercitationem dicta repudiandae, recusandae perspiciatis ducimus adipisci mollitia asperiores saepe dolorum
         sunt omnis molestiae. A, accusamus.
+        <br />
+        <br />
+        <br /> Para volver al Inicio pulsa en el logo de la APP SOCIAL CODE.
       </Text>
     </>
   )

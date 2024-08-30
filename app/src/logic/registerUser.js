@@ -1,16 +1,16 @@
 import errors, { SystemError } from "com/errors"
 import validate from "com/validate"
 
-const registerUser = (name, surname, email, username, password, passwordRepeat) => {
+const registerUser = (/*name, surname, email,*/ username, password, passwordRepeat) => {
 
-  validate.name(name)
-  validate.name(surname, "surname")
-  validate.email(email)
+  // validate.name(name)
+  // validate.name(surname, "surname")
+  // validate.email(email)
   validate.username(username)
   validate.password(password)
   validate.passwordsMatch(password, passwordRepeat)
 
-  const body = { name, surname, email, username, password, passwordRepeat }
+  const body = { /*name, surname, email,*/ username, password, passwordRepeat }
 
   return fetch(`${import.meta.env.VITE_API_URL}/users`, {
     method: "POST",

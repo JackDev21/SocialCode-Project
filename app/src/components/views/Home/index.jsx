@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Routes, Route, useNavigate, Link } from "react-router-dom"
+import { Routes, Route, useNavigate, Link, useLocation } from "react-router-dom"
 
 import logic from "../../../logic"
 
@@ -96,7 +96,9 @@ function Home() {
         )}
       </View>
 
-      <Footer onCreatePostClick={handleCreatePostClick} onClickScrollTop={scrollTop} />
+      {location.pathname !== "/about" && (
+        <Footer onCreatePostClick={handleCreatePostClick} onClickScrollTop={scrollTop} />
+      )}
 
       {message && <Alert message={message} onAccept={handleAlertAccepted} />}
     </>

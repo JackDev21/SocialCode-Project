@@ -10,10 +10,10 @@
   }
 
   .Logo {
-    @apply relative left-0 ml-6 w-fit rounded-lg text-[1.5rem] text-blanchedalmond no-underline md:text-[4vw] lg:text-[2.5rem];
+    @apply relative left-0 ml-1 w-fit rounded-lg text-center text-[1.5rem] text-blanchedalmond no-underline md:text-[4vw] lg:text-[2.5rem];
   }
 
   .Header > Button {
-    @apply mr-8;
+    @apply mr-1;
   }
 }

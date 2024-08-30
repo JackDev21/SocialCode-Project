@@ -47,6 +47,6 @@
     animation-fill-mode: both;
 
     animation-timeline: --reveal;
-    animation-range: entry 5% cover 30%;
+    animation-range: entry 0.5% 0.5%;
   }
 }

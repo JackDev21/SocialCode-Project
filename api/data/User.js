@@ -4,19 +4,15 @@ import { Schema, model } from "mongoose"
 const user = new Schema({
   name: {
     type: String,
-    required: true,
     match: NAME_REGEX
   },
   surname: {
     type: String,
-    required: true,
     match: NAME_REGEX
 
   },
   email: {
     type: String,
-    required: true,
-    unique: true,
     match: EMAIL_REGEX
   },
   username: {
