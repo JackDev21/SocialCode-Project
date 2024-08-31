@@ -5,11 +5,7 @@
     @apply flex flex-col items-center justify-center;
   }
 
-  .View.LoginForm {
-    @apply h-screen;
-  }
-
-  .View.RegisterForm {
-    @apply h-screen;
+  .View .LoginForm {
+    @apply mt-[1rem];
   }
 }

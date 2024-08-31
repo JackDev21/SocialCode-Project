@@ -2,7 +2,7 @@
 
 @layer {
   .AlertBox {
-    @apply fixed right-[35rem] top-28 z-20 flex flex-col items-center rounded-lg bg-white p-4 shadow-custom-shadow;
+    @apply absolute bottom-36 z-20 flex w-[13rem] flex-col items-center rounded-lg bg-white p-4 shadow-custom-shadow;
   }
   .AlertButton {
     @apply w-4/5;

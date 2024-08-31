@@ -29,7 +29,9 @@ function App() {
         <Route path="/*" element={<RenderHome />} />
       </Routes>
 
-      {message && <Alert message={message} onAccept={handleAlertAccepted} />}
+      <div className="absolute z-50 flex w-full justify-center">
+        {message && <Alert message={message} onAccept={handleAlertAccepted} />}
+      </div>
     </Context.Provider>
   )
 }
