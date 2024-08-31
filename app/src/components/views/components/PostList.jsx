@@ -15,7 +15,7 @@ function PostList({ refreshStamp }) {
 
   const [posts, setPosts] = useState([])
   const [page, setPage] = useState(1)
-  const [limit] = useState(5)
+  const [limit] = useState(10)
 
   useEffect(() => {
     console.log("PostList --> useEffect")

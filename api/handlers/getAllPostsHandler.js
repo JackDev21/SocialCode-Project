@@ -14,7 +14,7 @@ export default (req, res, next) => {
         const { sub: userId } = payload
 
         const page = parseInt(req.query.page) || 1
-        const limit = parseInt(req.query.limit) || 2
+        const limit = parseInt(req.query.limit) || 5
 
         try {
           logic.getAllPosts(userId, page, limit)
