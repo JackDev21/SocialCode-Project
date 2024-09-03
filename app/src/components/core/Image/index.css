@@ -2,10 +2,10 @@
 
 @layer components {
   .Image {
-    @apply w-2/3 max-w-60 rounded-lg shadow-custom-shadow;
+    @apply w-[95%] max-w-[25rem] rounded-lg shadow-custom-shadow;
   }
 
   .DivImage {
-    @apply w-full flex flex-col justify-center items-center my-4;
+    @apply my-4 flex w-full flex-col items-center justify-center;
   }
 }
