@@ -17,7 +17,7 @@ export default ((req, res, next) => {
         const { targetUserId } = req.params
         try {
           logic.getUserName(userId, targetUserId)
-            .then((name) => res.json(name))
+            .then((user) => res.json(user))
             .catch((error) => next(error))
         } catch (error) {
           next(error)

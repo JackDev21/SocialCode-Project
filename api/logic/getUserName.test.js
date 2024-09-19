@@ -8,8 +8,8 @@ mongoose.connect(MONGODB_URL)
   .then(() => {
     try {
       getUserName("668d0dce22a4d7ecd962b170", "668d0dce22a4d7ecd962b170")
-        .then((name) => {
-          console.log(`Name : ${name}`)
+        .then((user) => {
+          console.log(user)
         })
         .catch((error) => {
           console.error(error)

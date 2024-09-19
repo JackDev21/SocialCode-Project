@@ -1,3 +1,5 @@
+import { useDispatch, useSelector } from "react-redux"
+import { setPosts } from "../../../redux/postsSlice"
 import { useState, useEffect } from "react"
 
 import View from "../../library/View"
@@ -11,14 +13,17 @@ import useInfiniteScroll from "../../../utils/useInfiniteScroll"
 function PostList({ refreshStamp }) {
   console.log("Postlist --> render")
 
+  const dispatch = useDispatch()
+  const posts = useSelector((state) => state.posts)
+
   const { alert } = useContext()
 
-  const [posts, setPosts] = useState([])
   const [page, setPage] = useState(1)
   const [limit] = useState(10)
 
   useEffect(() => {
     console.log("PostList --> useEffect")
+    dispatch(setPosts([]))
     setPosts([])
     setPage(1)
     loadPosts(1, limit)
@@ -30,9 +35,8 @@ function PostList({ refreshStamp }) {
       logic.getAllPosts(page, limit)
         .then((newPosts) => {
           console.log("cargando posts...")
-          console.log(newPosts)
-          setPosts((prevPosts) => [...prevPosts, ...newPosts])
-          
+          console.log(newPosts)         
+          dispatch(setPosts(newPosts))
         })
         .catch((error) => {
           console.error(error)
@@ -48,12 +52,12 @@ function PostList({ refreshStamp }) {
 
   const handlePostLoadDeleted = () => {
     setPage(1)
-    setPosts([])
+    dispatch(setPosts([]))
     loadPosts(1, limit)
   }
   const handlePostEdited = () => {
     setPage(1)
-    setPosts([])
+    dispatch(setPosts([]))
     loadPosts(1, limit)
   }
 

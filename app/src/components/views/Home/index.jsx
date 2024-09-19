@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
-import { Routes, Route, useNavigate, Link, useLocation } from "react-router-dom"
+import { Routes, Route, useNavigate, Link } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { setUser } from "../../../redux/userSlice"
 
 import logic from "../../../logic"
 
@@ -22,7 +24,9 @@ function Home() {
 
   console.log("Home --> render")
 
-  const [name, setName] = useState("")
+  const dispatch = useDispatch()
+  const user = useSelector((state) => state.user)
+
   const [viewCreatePostForm, setViewCreatePostForm] = useState("")
   const [postListRefresh, setPostListRefresh] = useState(0)
   const [message, setMessage] = useState(null)
@@ -36,10 +40,11 @@ function Home() {
     console.log("Home --> UseEffect")
     try {
       // prettier-ignore
-      logic.getUserName(name)
-        .then((name) => {
+      logic.getUserName()
+        .then((user) => {
           console.log("Home --> setName")
-          setName(name)
+          dispatch(setUser(user))
+          
         })
         .catch((error) => {
           console.error(error.message)
@@ -53,7 +58,7 @@ function Home() {
       //alert(error.message)
       setMessage(error.message)
     }
-  }, [])
+  }, [dispatch])
 
   const handleCreatePostClick = () => setViewCreatePostForm("create-post")
   const handleCancelCreatePost = () => setViewCreatePostForm("")
@@ -74,7 +79,7 @@ function Home() {
   return (
     <>
       <Header>
-        <Heading level="3">{name}</Heading>
+        <Heading level="3">{user.name}</Heading>
         <Link to="/about">About</Link>
         <Button onClick={handleLogout} className="LogoutButton">
           Logout
