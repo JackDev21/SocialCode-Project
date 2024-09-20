@@ -80,7 +80,7 @@ function Home() {
     <>
       <Header>
         <Heading level="3">{user.name}</Heading>
-        <Link to="/about">About</Link>
+        <Link to="/about">Prueba</Link>
         <Button onClick={handleLogout} className="LogoutButton">
           Logout
         </Button>
