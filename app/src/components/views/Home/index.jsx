@@ -79,6 +79,7 @@ function Home() {
   return (
     <>
       <Header>
+        <h1>{user.name}</h1>
         <Heading level="3">{user.email}</Heading>
         <Link to="/about">About</Link>
         <Button onClick={handleLogout} className="LogoutButton">
