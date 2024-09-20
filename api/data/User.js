@@ -19,7 +19,7 @@ const user = new Schema({
     type: String,
     required: true,
     unique: true,
-    math: USERNAME_REGEX
+    match: USERNAME_REGEX
   },
   password: {
     type: String,

@@ -79,7 +79,7 @@ function Home() {
   return (
     <>
       <Header>
-        <Heading level="3">{user.email}</Heading>
+        <Heading level="3">{user.username}</Heading>
         <Link to="/about">About</Link>
         <Button onClick={handleLogout} className="LogoutButton">
           Logout
